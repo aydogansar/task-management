@@ -2,11 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { RootState } from './';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-import themes from 'theme';
+import type { ThemeKeys } from 'types';
 
 interface States {
-  selectedTheme: keyof typeof themes;
+  selectedTheme: ThemeKeys;
 }
 
 const initialState: States = {
@@ -18,7 +17,7 @@ export const themeSlice = createSlice({
 
   initialState,
   reducers: {
-    setTheme: (state, action: PayloadAction<keyof typeof themes>) => {
+    setTheme: (state, action: PayloadAction<ThemeKeys>) => {
       state.selectedTheme = action.payload;
     },
   },
