@@ -3,3 +3,4 @@ node_modules
 yarn.lock
 /components/icons/*
 next.config.js
+jest.config.js
