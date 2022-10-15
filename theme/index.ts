@@ -125,9 +125,6 @@ const mainTheme: DefaultTheme = {
     whiteSmoke: '#F5F5F5',
     snow: '#FFFAFA',
   },
-  sizes: {
-    1: '0.2rem',
-  },
 };
 
 const lightTheme: DefaultTheme = {
