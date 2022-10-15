@@ -121,7 +121,7 @@ const mainTheme: DefaultTheme = {
     periwinkle: '#CCCCFF',
     offWhite: '#F8F0E3',
     rice: '#FAF5EF',
-    lightWhite: '#FFFFF7	',
+    lightWhite: '#FFFFF7',
     whiteSmoke: '#F5F5F5',
     snow: '#FFFAFA',
   },
