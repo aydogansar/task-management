@@ -15,3 +15,9 @@ a {
   box-sizing: border-box;
 }
 
+body{
+  background:#16213E;
+  color:#A9A9A9;
+  font-size: 16px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
