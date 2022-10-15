@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import localeReducer from './locale';
 import themeReducer from './theme';
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
+    locale: localeReducer,
   },
 });
 
