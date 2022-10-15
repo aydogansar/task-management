@@ -10,7 +10,7 @@ interface Props {
 }
 
 function IntlProvider({ children }: Props) {
-  const { current } = useSelector(state => state.locale);
+  const current = useSelector(state => state.locale.current);
 
   const currentMessages = messages[current];
 
