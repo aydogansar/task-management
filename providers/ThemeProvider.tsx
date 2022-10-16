@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
 import { useSelector } from 'hooks';
-import themes from 'theme';
+import themes, { GlobalStyle } from 'theme';
 
 interface Props {
   children: ReactNode;
@@ -14,7 +14,12 @@ function ThemeProvider({ children }: Props) {
 
   const theme = themes[selectedTheme];
 
-  return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
+  return (
+    <StyledThemeProvider theme={theme}>
+      <GlobalStyle />
+      {children}
+    </StyledThemeProvider>
+  );
 }
 
 export default ThemeProvider;
