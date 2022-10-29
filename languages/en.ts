@@ -1,4 +1,6 @@
-const messages = {
+import { Messages } from './types';
+
+const messages: Messages = {
   hi: 'Hi',
 };
 

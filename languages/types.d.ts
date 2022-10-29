@@ -1,9 +1,13 @@
 import messages from './index';
 
+export interface Messages {
+  hi: string;
+}
+
 declare global {
   namespace FormatjsIntl {
     interface Message {
-      ids: keyof typeof messages.en;
+      ids: keyof Messages;
     }
   }
   namespace FormatjsIntl {
