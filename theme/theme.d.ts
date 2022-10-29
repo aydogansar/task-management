@@ -1,6 +1,7 @@
 import 'styled-components';
 
 import { Colors } from './colors';
+import { Utils } from './utils';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -10,5 +11,6 @@ declare module 'styled-components' {
       bgColor: string;
       textColor: string;
     } & Colors;
+    utils: Utils;
   }
 }
