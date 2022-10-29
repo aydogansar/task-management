@@ -1,7 +1,11 @@
-import type { NextPage } from 'next';
+import { Page } from 'types';
 
-const Home: NextPage = () => {
+const Home: Page = () => {
   return <div>this is home</div>;
+};
+
+Home.configs = {
+  sidebar: true,
 };
 
 export default Home;

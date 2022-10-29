@@ -1,13 +1,23 @@
 import type { AppProps } from 'next/app';
 
+import { AppLayout } from 'layouts';
 import { AppProviders } from 'providers';
+import { Page } from 'types';
 
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+interface CustomAppProps extends AppProps {
+  Component: Page;
+}
+
+function MyApp({ Component, pageProps }: CustomAppProps) {
+  const pageConfigs = Component.configs || {};
+
   return (
     <AppProviders>
-      <Component {...pageProps} />
+      <AppLayout {...pageConfigs}>
+        <Component {...pageProps} />
+      </AppLayout>
     </AppProviders>
   );
 }
