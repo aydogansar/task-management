@@ -1,6 +1,7 @@
 import { DefaultTheme } from 'styled-components';
 
 import colors from './colors';
+import shadows from './shadows';
 import utils from './utils';
 
 const mainTheme: DefaultTheme = {
@@ -11,6 +12,7 @@ const mainTheme: DefaultTheme = {
     bgColor: colors.dark,
     textColor: colors.darkGray,
   },
+  shadows,
   utils,
 };
 

@@ -1,6 +1,7 @@
 import 'styled-components';
 
 import { Colors } from './colors';
+import { Shadows } from './shadows';
 import { Utils } from './utils';
 
 declare module 'styled-components' {
@@ -11,6 +12,7 @@ declare module 'styled-components' {
       bgColor: string;
       textColor: string;
     } & Colors;
+    shadows: Shadows;
     utils: Utils;
   }
 }
