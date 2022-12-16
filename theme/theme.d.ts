@@ -11,6 +11,7 @@ declare module 'styled-components' {
       secondary: string;
       bgColor: string;
       textColor: string;
+      hoverColor: string;
     } & Colors;
     shadows: Shadows;
     utils: Utils;

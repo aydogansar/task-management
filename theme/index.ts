@@ -11,6 +11,7 @@ const mainTheme: DefaultTheme = {
     secondary: colors.beeYellow,
     bgColor: colors.dark,
     textColor: colors.darkGray,
+    hoverColor: colors.white,
   },
   shadows,
   utils,
