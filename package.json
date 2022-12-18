@@ -14,10 +14,13 @@
     "lint": "next lint",
     "test": "jest --watch",
     "testAll": "jest --watchAll",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
+    "cypress": "^12.1.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "framer-motion": "^7.6.2",
     "next": "12.3.1",
     "nookies": "^2.5.2",
