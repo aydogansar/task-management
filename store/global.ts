@@ -6,7 +6,7 @@ interface States {
 }
 
 const initialState: States = {
-  isSidebarOpen: parseCookies().sidebarOpen === 'true',
+  isSidebarOpen: true,
 };
 
 export const globalSlice = createSlice({
