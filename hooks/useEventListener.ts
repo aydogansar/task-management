@@ -4,9 +4,9 @@ function useEventListener(event: keyof WindowEventMap, handleEvent: (event: Even
   useEffect(() => {
     const el = element?.current || window;
 
-    el.addEventListener(event, handleEvent);
+    el?.addEventListener(event, handleEvent);
 
-    return () => el.removeEventListener(event, handleEvent);
+    return () => el?.removeEventListener(event, handleEvent);
   }, [event, handleEvent, element]);
 }
 export default useEventListener;
