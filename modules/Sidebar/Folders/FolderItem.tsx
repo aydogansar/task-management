@@ -49,17 +49,15 @@ interface WrapperProps {
 }
 
 const Wrapper = styled.div<WrapperProps>`
-  gap: 0.5rem;
   cursor: pointer;
   width: 100%;
-  margin-bottom: 0.2rem;
 
   & > div {
     ${({ theme }) => theme.utils.dFlex('space-between')};
     transition: all 0.3s ease-in-out;
     width: 100%;
     user-select: none;
-    padding: 0.3rem;
+    padding: 0.5rem 0.3rem;
 
     ${({ theme, isDragging }) =>
       isDragging &&
