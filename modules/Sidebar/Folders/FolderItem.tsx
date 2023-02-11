@@ -5,6 +5,8 @@ import { AiFillFolder } from 'react-icons/ai';
 import { RxDragHandleDots2 } from 'react-icons/rx';
 import styled, { css } from 'styled-components';
 
+import { getVerticalDragStyles } from 'utils';
+
 interface Props {
   id: string;
   index: number;
@@ -18,38 +20,25 @@ function FolderItem({ id, index, children }: Props) {
       draggableId={id}
       index={index}
     >
-      {(provided, snapshot) => {
-        let transform = provided.draggableProps.style?.transform;
+      {(provided, snapshot) => (
+        <Wrapper
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          style={getVerticalDragStyles({ provided, snapshot })}
+          isDragging={snapshot.isDragging}
+        >
+          <div>
+            <Info>
+              <AiFillFolder />
+              {children}
+            </Info>
 
-        if (snapshot.isDragging && transform) {
-          transform = transform.replace(/\(.+\,/, '(0,');
-        }
-
-        const style = {
-          ...provided.draggableProps.style,
-          transform,
-        };
-
-        return (
-          <Wrapper
-            ref={provided.innerRef}
-            {...provided.draggableProps}
-            style={style}
-            isDragging={snapshot.isDragging}
-          >
-            <div>
-              <Info>
-                <AiFillFolder />
-                {children}
-              </Info>
-
-              <div {...provided.dragHandleProps}>
-                <RxDragHandleDots2 />
-              </div>
+            <div {...provided.dragHandleProps}>
+              <RxDragHandleDots2 />
             </div>
-          </Wrapper>
-        );
-      }}
+          </div>
+        </Wrapper>
+      )}
     </Draggable>
   );
 }
