@@ -1,16 +1,10 @@
-import { ReactNode } from 'react';
-
-import { DragDropContext, DropResult } from 'react-beautiful-dnd';
+import { DropResult } from 'react-beautiful-dnd';
 
 import { useDispatch, useSelector } from 'hooks';
 import { setFolders } from 'store/workspaces';
 import { reorder } from 'utils';
 
-interface Props {
-  children: ReactNode;
-}
-
-function DndProvider({ children }: Props) {
+function useDnd() {
   const dispatch = useDispatch();
 
   const folders = useSelector(state => state.workspaces.folders);
@@ -25,6 +19,8 @@ function DndProvider({ children }: Props) {
     dispatch(setFolders(reorderedFolders));
   };
 
-  return <DragDropContext onDragEnd={onDragEnd}>{children}</DragDropContext>;
+  return {
+    onDragEnd,
+  };
 }
-export default DndProvider;
+export default useDnd;
