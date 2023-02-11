@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 
+import DndProvider from './DndProvider';
 import IntlProvider from './IntlProvider';
 import ReduxProvider from './ReduxProvider';
 import ThemeProvider from './ThemeProvider';
@@ -12,7 +13,9 @@ function AppProviders({ children }: Props) {
   return (
     <ReduxProvider>
       <IntlProvider>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <DndProvider>{children}</DndProvider>
+        </ThemeProvider>
       </IntlProvider>
     </ReduxProvider>
   );

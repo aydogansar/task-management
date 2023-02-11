@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
+import Folders from './Folders';
 import Header from './Header';
 import OpenBar from './OpenBar';
 import useSidebar from './useSidebar';
@@ -24,7 +25,9 @@ function Sidebar() {
       animate={open ? 'show' : 'hide'}
     >
       <Header close={() => setOpen(false)} />
-      <Content>sidebar</Content>
+      <Content>
+        <Folders />
+      </Content>
       {!open && <OpenBar open={() => setOpen(true)} />}
     </Wrapper>
   );
