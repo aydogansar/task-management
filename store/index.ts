@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import globalReducer from './global';
 import localeReducer from './locale';
 import themeReducer from './theme';
+import workspacesReducer from './workspaces';
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
     locale: localeReducer,
     global: globalReducer,
+    workspaces: workspacesReducer,
   },
 });
 
