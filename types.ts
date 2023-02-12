@@ -19,12 +19,12 @@ export type LocalesType = keyof typeof messages;
 
 export type FlexVariants = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
 
-export interface Todo {
+export interface Task {
   key: string;
   title: string;
 }
 export interface Workspace {
   key: string;
   label: string;
-  todos: Todo[];
+  tasks: Task[];
 }

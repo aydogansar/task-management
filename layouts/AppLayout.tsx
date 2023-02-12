@@ -20,5 +20,5 @@ function AppLayout({ children, sidebar }: Props) {
 export default AppLayout;
 
 const Wrapper = styled.div`
-  ${({ theme }) => theme.utils.dFlex('flex-start', 'flex-start')}
+  ${({ theme }) => theme.utils.dFlex('flex-start', 'flex-start')};
 `;

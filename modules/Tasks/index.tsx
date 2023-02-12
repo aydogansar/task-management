@@ -2,12 +2,12 @@ import { Droppable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 
 import { DroppableIds } from 'constant';
-import { useSelector, useDroppable } from 'hooks';
+import { useDroppable, useSelector } from 'hooks';
 
-import FolderItem from './FolderItem';
+import Task from './Task';
 
-function Folders() {
-  const folders = useSelector(state => state.workspaces.folders);
+function Tasks() {
+  const tasks = useSelector(state => state.workspaces.selectedTasks);
 
   const { enabled } = useDroppable();
 
@@ -16,23 +16,19 @@ function Folders() {
   }
 
   return (
-    <Droppable
-      droppableId={DroppableIds.WORKSPACE}
-      type="folders"
-    >
+    <Droppable droppableId={DroppableIds.TASKS}>
       {provided => (
         <Wrapper
           {...provided.droppableProps}
           ref={provided.innerRef}
         >
-          {folders.map((item, i) => (
-            <FolderItem
+          {tasks?.map((item, i) => (
+            <Task
               key={item.key}
               id={item.key}
               index={i}
-            >
-              {item.label}
-            </FolderItem>
+              title={item.title}
+            />
           ))}
           {provided.placeholder}
         </Wrapper>
@@ -40,9 +36,9 @@ function Folders() {
     </Droppable>
   );
 }
-export default Folders;
+export default Tasks;
 
 const Wrapper = styled.div`
-  ${({ theme }) => theme.utils.dFlex('flex-start', 'flex-start')};
-  flex-direction: column;
+  padding: 1rem;
+  border: ${({ theme }) => `1px solid ${theme.colors.gray}`};
 `;

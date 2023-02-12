@@ -1,7 +1,14 @@
+import styled from 'styled-components';
+
+import { Tasks } from 'modules';
 import { Page } from 'types';
 
 const Home: Page = () => {
-  return <div>this is home</div>;
+  return (
+    <Wrapper>
+      <Tasks />
+    </Wrapper>
+  );
 };
 
 Home.configs = {
@@ -9,3 +16,8 @@ Home.configs = {
 };
 
 export default Home;
+
+const Wrapper = styled.div`
+  width: 100%;
+  padding: 1rem;
+`;

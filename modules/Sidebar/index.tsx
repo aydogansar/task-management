@@ -11,7 +11,7 @@ const variants = {
     marginLeft: 0,
   },
   hide: {
-    marginLeft: -300,
+    marginLeft: '-18.75rem',
   },
 };
 
@@ -39,12 +39,14 @@ const Wrapper = styled(motion.div)`
   ${({ theme }) => theme.utils.dFlex('space-between')};
   flex-direction: column;
 
+  flex-shrink: 0;
   position: relative;
   background: ${({ theme }) => theme.colors.bgColor};
   border-right: 1px solid ${({ theme }) => theme.colors.lightGray};
   box-shadow: ${({ theme }) => theme.shadows.sidebar};
   height: 100vh;
-  width: 300px;
+  width: 18.75rem;
+  max-width: 18.75rem;
 `;
 
 const Content = styled.div`
