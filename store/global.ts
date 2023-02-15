@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { setCookie, parseCookies } from 'nookies';
+import { setCookie } from 'cookies-next';
 
 interface States {
   isSidebarOpen: boolean;
@@ -17,7 +17,7 @@ export const globalSlice = createSlice({
     setSidebarOpen: (state, action: PayloadAction<boolean>) => {
       state.isSidebarOpen = action.payload;
 
-      setCookie(null, 'sidebarOpen', `${action.payload}`);
+      setCookie('sidebarOpen', `${action.payload}`);
     },
   },
 });
