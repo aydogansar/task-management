@@ -3,3 +3,5 @@ export enum DroppableIds {
   TASKS = 'tasks',
   FOLDER = 'folder',
 }
+
+export const PublicPaths = ['/sign-in', '/sign-up'];
