@@ -1,3 +1,4 @@
+import { Session, User as AltogicUser } from 'altogic';
 import { NextPage } from 'next';
 
 import messages from 'languages';
@@ -19,12 +20,28 @@ export type LocalesType = keyof typeof messages;
 
 export type FlexVariants = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
 
+// export interface Task {
+//   _id: string;
+//   name: string;
+//   status: TaskStatuses;
+//   createdAt: Date;
+//   updatedAt: Date;
+//   createdBy: string;
+//   workspaceId: string;
+//   index: number;
+// }
 export interface Task {
   key: string;
   title: string;
 }
+
 export interface Workspace {
   key: string;
   label: string;
   tasks: Task[];
+}
+
+export interface User {
+  session: Session;
+  user: AltogicUser;
 }

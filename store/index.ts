@@ -1,4 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
+
+import api from 'client/api';
 
 import globalReducer from './global';
 import localeReducer from './locale';
@@ -11,8 +14,12 @@ export const store = configureStore({
     locale: localeReducer,
     global: globalReducer,
     workspaces: workspacesReducer,
+    [api.reducerPath]: api.reducer,
   },
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(api.middleware),
 });
+
+setupListeners(store.dispatch);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
