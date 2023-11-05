@@ -28,5 +28,6 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn build
+    - run: yarn start
     - run: yarn test:component-h
     - run: yarn test:e2e-h
