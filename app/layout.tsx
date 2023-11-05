@@ -1,11 +1,12 @@
-import { Inter } from 'next/font/google';
+import { Cabin, Exo_2 } from 'next/font/google';
 
 import type { Metadata } from 'next';
 
 import './globals.tw.css';
 import AppProviders from 'providers/AppProviders';
 
-const inter = Inter({ subsets: ['latin'] });
+const titleFont = Cabin({ subsets: ['latin'], variable: '--title-font' });
+const textFont = Exo_2({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +16,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <AppProviders>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
+      <html
+        lang="en"
+        className={` ${titleFont.variable}`}
+      >
+        <body className={textFont.className}>{children}</body>
       </html>
     </AppProviders>
   );
