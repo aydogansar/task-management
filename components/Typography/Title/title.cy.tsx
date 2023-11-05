@@ -2,6 +2,8 @@
 
 import Title from './index';
 
+import '../../../app/globals.tw.css';
+
 it('mounts', () => {
   cy.mount(<Title>Başlık!</Title>);
 

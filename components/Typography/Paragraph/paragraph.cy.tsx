@@ -2,6 +2,8 @@
 
 import Paragraph from './index';
 
+import '../../../app/globals.tw.css';
+
 it('mounts', () => {
   cy.mount(<Paragraph>Test!</Paragraph>);
 

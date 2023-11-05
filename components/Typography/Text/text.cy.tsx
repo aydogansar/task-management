@@ -2,6 +2,8 @@
 
 import Text from './index';
 
+import '../../../app/globals.tw.css';
+
 it('mounts', () => {
   cy.mount(<Text>Test!</Text>);
 
