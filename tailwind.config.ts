@@ -11,6 +11,15 @@ const config: Config = {
       colors: {
         primary: '#4169E1',
       },
+      keyframes: {
+        inputBorderAnimation: {
+          '0%': { left: 'calc(50% - 1rem)', width: '1rem' },
+          '50%': { left: '0', width: '100%' },
+        },
+      },
+      animation: {
+        inputBorderAnimation: 'inputBorderAnimation 1s',
+      },
     },
   },
   plugins: [],
