@@ -1,0 +1,6 @@
+node_modules
+.next
+yarn.lock
+/components/icons/*
+next.config.js
+cypress.config.ts
