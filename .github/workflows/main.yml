@@ -26,12 +26,17 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
 
-    - name: "run tests"
+    - name: "Run E2E Test"
       uses: cypress-io/github-action@v6
       with:
-          component: true
           browser: chrome
           build: yarn build
           start: yarn start
           wait-on: 'http://localhost:3000'
+
+    - name: "Run component tests"
+      uses: cypress-io/github-action@v6
+      with:
+          install: false
+          component: true
           
