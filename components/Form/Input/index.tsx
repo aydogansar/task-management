@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, ReactNode } from 'react';
 
 import { ErrorMessage, FormRegister } from 'types/Form';
 
@@ -6,13 +6,13 @@ import styles from './styles';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  label: string;
+  label: string | ReactNode;
   error?: ErrorMessage;
   register?: FormRegister;
 }
 
 function Input({ type = 'text', name, label, register, error, placeholder, ...props }: Props) {
-  const { wrapper, labelStyles, input } = styles({ error: !!error });
+  const { wrapper, labelStyles, input, errorLabel } = styles({ error: !!error });
 
   return (
     <div
@@ -36,7 +36,7 @@ function Input({ type = 'text', name, label, register, error, placeholder, ...pr
           {label}
         </label>
       )}
-      {/* {error && <span>{error.toString()}</span>} */}
+      {error && <span className={errorLabel()}>{error.toString()}</span>}
     </div>
   );
 }

@@ -14,6 +14,10 @@ const config: Config = {
         primaryDark: '#272829',
         secondaryDark: '#393E46',
         neutral: '#EEEEEE',
+        danger: '#ff0505',
+        success: '#22bb33',
+        warning: '#f0ad4e',
+        info: '#5bc0de',
       },
       keyframes: {
         inputBorderAnimation: {
