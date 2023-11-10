@@ -4,7 +4,6 @@ import api from './api';
 
 interface SignUpParams {
   email: string;
-  name: string;
   password: string;
 }
 
@@ -24,17 +23,11 @@ export const userApi = api.injectEndpoints({
     }),
     signIn: builder.mutation<User, SignInParams>({
       query: body => ({
-        url: 'signIn',
+        url: '/signIn',
         method: 'POST',
         body,
       }),
       invalidatesTags: ['User'],
-    }),
-    getCurrentUser: builder.query<User, void>({
-      query: () => ({
-        url: 'me',
-      }),
-      providesTags: ['User'],
     }),
   }),
   overrideExisting: true,
