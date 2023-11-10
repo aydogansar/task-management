@@ -1,5 +1,14 @@
 {
   "Homepage": {
     "hi": "Merhaba"
+  },
+  "AuthPage": {
+    "email": "E-posta",
+    "password": "Parola",
+    "placeholderEmail": "ornek@ornek.com"
+  },
+  "Validations": {
+    "required": "{name} alanının doldurulması zorunludur",
+    "email": "Geçerli bir e-mail adresi giriniz"
   }
 }

@@ -1,5 +1,14 @@
 {
   "Homepage": {
     "hi": "Hi"
+  },
+  "AuthPage": {
+    "email": "Email",
+    "password": "Password",
+    "placeholderEmail": "example@example.com"
+  },
+  "Validations": {
+    "required": "{name} field is required",
+    "email": "Please enter a valid email"
   }
 }
