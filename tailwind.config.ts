@@ -10,6 +10,10 @@ const config: Config = {
       },
       colors: {
         primary: '#4169E1',
+        secondary: '#FFD369',
+        primaryDark: '#272829',
+        secondaryDark: '#393E46',
+        neutral: '#EEEEEE',
       },
       keyframes: {
         inputBorderAnimation: {
