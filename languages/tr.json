@@ -5,7 +5,12 @@
   "AuthPage": {
     "email": "E-posta",
     "password": "Parola",
-    "placeholderEmail": "ornek@ornek.com"
+    "placeholderEmail": "ornek@ornek.com",
+    "signInLabel": "Giriş Yap",
+    "signInTitle": "Oturum Aç",
+    "signUpLabel": "Kayıt Ol",
+    "signUpTitle": "Hemen Üye Ol!",
+    "forgetPassword": "Şifrenizi mi unuttunuz?"
   },
   "Validations": {
     "required": "{name} alanının doldurulması zorunludur",

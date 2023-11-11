@@ -5,7 +5,12 @@
   "AuthPage": {
     "email": "Email",
     "password": "Password",
-    "placeholderEmail": "example@example.com"
+    "placeholderEmail": "example@example.com",
+    "signInLabel": "Sign In",
+    "signInTitle": "Login",
+    "signUpLabel": "Sign Up",
+    "signUpTitle": "Register Now",
+    "forgetPassword": "Forgot your password?"
   },
   "Validations": {
     "required": "{name} field is required",
