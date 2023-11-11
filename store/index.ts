@@ -17,9 +17,11 @@ export type Reducer = StateFromReducersMapObject<typeof reducer>;
 
 export type InitialStoreState = Partial<PreloadedState<Reducer>>;
 
-let ReduxStore: ToolkitStore<InitialStoreState>;
+type TReduxStore = ToolkitStore<PreloadedState<Reducer>>;
 
-export const makeStore = (preloadedState?: InitialStoreState): ToolkitStore<InitialStoreState> => {
+let ReduxStore: TReduxStore;
+
+export const makeStore = (preloadedState?: InitialStoreState): TReduxStore => {
   if (ReduxStore) {
     return ReduxStore;
   }

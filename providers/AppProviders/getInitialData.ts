@@ -4,13 +4,15 @@ import { InitialStoreState } from 'store';
 import { createSupabaseServerClient } from 'utils/supabase';
 
 async function getInitialData(): Promise<InitialStoreState> {
-  const supabase = createSupabaseServerClient({ cookies: cookies() });
+  const cookieStore = cookies();
 
-  const { data: userSession, error } = await supabase.auth.getSession();
+  const supabase = createSupabaseServerClient({ cookies: cookieStore });
+
+  const { data: userSession } = await supabase.auth.getSession();
 
   const initialState: InitialStoreState = {};
 
-  if (userSession) {
+  if (userSession?.session) {
     initialState.auth = {
       user: userSession.session.user,
       session: userSession.session,
