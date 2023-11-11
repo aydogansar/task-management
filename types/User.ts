@@ -1,5 +1,4 @@
 import { Session } from '@supabase/supabase-js';
 
-export interface User {
-  session: Session;
-}
+export type User = Session['user'];
+export type UserSession = Session;

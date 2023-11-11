@@ -23,18 +23,18 @@ interface Props {
   };
 }
 
-export default function RootLayout({ children, params: { locale } }: Props) {
+export default async function RootLayout({ children, params: { locale } }: Props) {
   const isValidLocale = locales.some(cur => cur === locale);
   if (!isValidLocale) notFound();
 
   return (
-    <AppProviders>
-      <html
-        lang="en"
-        className={` ${titleFont.variable}`}
-      >
-        <body className={textFont.className}>{children}</body>
-      </html>
-    </AppProviders>
+    <html
+      lang={locale}
+      className={` ${titleFont.variable}`}
+    >
+      <body className={textFont.className}>
+        <AppProviders>{children}</AppProviders>
+      </body>
+    </html>
   );
 }
