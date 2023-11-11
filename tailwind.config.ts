@@ -27,6 +27,7 @@ const config: Config = {
       },
       animation: {
         inputBorderAnimation: 'inputBorderAnimation 1s',
+        inputBorderAnimationInfinite: 'inputBorderAnimation 1s infinite',
       },
     },
   },
