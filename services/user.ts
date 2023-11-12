@@ -1,4 +1,4 @@
-import { User } from 'types/User';
+import { User, UserSession } from 'types/User';
 
 import api from './api';
 
@@ -12,22 +12,32 @@ interface SignInParams {
   password: string;
 }
 
+interface SignInResponse {
+  data: UserSession;
+}
+
 export const userApi = api.injectEndpoints({
   endpoints: builder => ({
-    signUp: builder.mutation<User, SignUpParams>({
+    signUp: builder.mutation<SignInResponse, SignUpParams>({
       query: body => ({
         url: 'signUp',
         method: 'POST',
         body,
       }),
+      extraOptions: {
+        nextApi: true,
+      },
     }),
-    signIn: builder.mutation<User, SignInParams>({
+    signIn: builder.mutation<SignInResponse, SignInParams>({
       query: body => ({
         url: '/signIn',
         method: 'POST',
         body,
       }),
       invalidatesTags: ['User'],
+      extraOptions: {
+        nextApi: true,
+      },
     }),
   }),
   overrideExisting: true,
