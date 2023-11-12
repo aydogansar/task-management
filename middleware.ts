@@ -1,18 +1,10 @@
-import { NextResponse, type NextRequest } from 'next/server';
+import { NextRequest } from 'next/server';
 
-import createMiddleware from 'next-intl/middleware';
-
-import { DEFAULT_LOCALE, locales } from 'languages';
-import { pathnames } from 'navigation';
+import { authMiddleware } from 'middlewares/authMiddleware';
+import { intlMiddleware } from 'middlewares/intlMiddleware';
 
 export async function middleware(request: NextRequest) {
-  const handleIntlRouting = createMiddleware({
-    locales,
-    defaultLocale: DEFAULT_LOCALE,
-    pathnames,
-  });
-
-  const response = handleIntlRouting(request);
+  const response = await authMiddleware(request, intlMiddleware(request));
 
   return response;
 }
