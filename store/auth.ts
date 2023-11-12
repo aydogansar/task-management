@@ -4,7 +4,7 @@ import { User, UserSession } from 'types/User';
 
 interface States {
   user: User | null;
-  session: UserSession | null;
+  session: UserSession['session'] | null;
 }
 
 const initialState: States = {
@@ -17,7 +17,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action: PayloadAction<UserSession>) => {
-      state.session = action.payload;
+      state.session = action.payload.session;
       state.user = action.payload.user;
     },
   },
