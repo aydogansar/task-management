@@ -4,10 +4,10 @@ import styles, { ButtonVariants } from './styles';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant: ButtonVariants;
+  variant?: ButtonVariants['variant'];
 }
 
-function Button({ children }: Props) {
-  return <button className={styles({ variant: 'secondary' })}>{children}</button>;
+function Button({ children, variant }: Props) {
+  return <button className={styles({ variant })}>{children}</button>;
 }
 export default Button;
