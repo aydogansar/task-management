@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { createServerClient, CookieOptions } from '@supabase/ssr';
 
+import { ACCESS_TOKEN_KEY } from 'constant';
+
 export const authMiddleware = async (request: NextRequest, response: NextResponse) => {
   const supabase = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
     cookies: {
@@ -50,7 +52,7 @@ export const authMiddleware = async (request: NextRequest, response: NextRespons
   } = await supabase.auth.getSession();
 
   if (session?.user) {
-    response.headers.set('authenticated', 'true');
+    response.cookies.set(ACCESS_TOKEN_KEY, session?.access_token);
   }
 
   return response;
