@@ -2,18 +2,20 @@
 
 import { ReactNode } from 'react';
 
-import { useSelector } from 'hooks';
-import { usePathname, redirect } from 'navigation';
+import { redirect } from 'next/navigation';
+
+import { usePathname } from 'navigation';
+import { User } from 'types/User';
 
 interface Props {
   children: ReactNode;
+  user?: User;
 }
 
 /**
  * All routes are private by default
  * except included here
  */
-
 const publicPaths = ['/auth'];
 
 /**
@@ -21,18 +23,18 @@ const publicPaths = ['/auth'];
  */
 const anonimPaths = ['/auth'];
 
-function AuthProvider({ children }: Props) {
-  const user = useSelector(state => state.auth.user);
-
+function AuthProvider({ children, user }: Props) {
   const pathname = usePathname();
+
   const isPublicPage = publicPaths.includes(pathname);
+  const isAnonimPage = anonimPaths.includes(pathname);
 
   if (!user && !isPublicPage) {
-    return redirect('/auth');
+    redirect('/auth');
   }
 
-  if (user && anonimPaths.includes(pathname)) {
-    return redirect('/');
+  if (user && isAnonimPage) {
+    redirect('/');
   }
 
   return children;

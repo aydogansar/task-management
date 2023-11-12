@@ -15,7 +15,7 @@ async function AppProviders({ children }: Props) {
 
   return (
     <ReduxProvider initialStates={initialStates}>
-      <AuthProvider>{children}</AuthProvider>
+      <AuthProvider user={initialStates?.auth?.user}>{children}</AuthProvider>
     </ReduxProvider>
   );
 }
